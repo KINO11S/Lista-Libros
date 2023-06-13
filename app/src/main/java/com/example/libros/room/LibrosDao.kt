@@ -12,15 +12,15 @@ interface LibrosDao {
     fun obtenerLibros(): Flow<List<Librosmodel>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun guardarLibros(gastoModel: Librosmodel)
+    suspend fun guardarLibros(librosmodel: Librosmodel)
 
     @Update
-    fun actualizarLibros(gastoModel: Librosmodel)
+    fun actualizarLibros(librosModel: Librosmodel)
 
     @Query("DELETE FROM Libros")
     suspend fun eliminarTodosLibros()
 
     @Delete
-    suspend fun eliminarLibros(gastoModel: Librosmodel)
+    suspend fun eliminarLibros(librosModel: Librosmodel)
 
 }

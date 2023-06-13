@@ -1,11 +1,9 @@
 package com.example.libros.room
 
 import android.content.Context
-
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.libros.room.Librosmodel
 
 @Database(entities = [Librosmodel::class], version = 1)
 abstract class RoomDatabase : RoomDatabase() {
@@ -26,7 +24,7 @@ abstract class RoomDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     RoomDatabase::class.java,
-                    "bdGastos"
+                    "bdLibros"
                 ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance
